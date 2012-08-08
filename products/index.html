@@ -1,0 +1,328 @@
+<!--
+
+	// Kye Weedon
+	// kyeweedon.com
+	// June 2012
+
+-->
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		
+		<!-- Info -->
+		<title>Outboard Motors Australia</title>
+		
+		<!-- Styles -->
+		<link rel="stylesheet/less" type="text/css" href="index.less"/>
+		<link rel="stylesheet" type="text/css" href="../src/images/galleria/themes/classic/galleria.classic.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="../src/css/dropkick.css"/>-->
+		
+		<!-- Scripts -->
+		<script src="../src/js/jQuery.js"></script>
+		<script src="../src/js/less.js"></script>
+		<script src="../src/js/galleria.js"></script>
+		<!--<script src="../src/js/dropkick.js"></script>-->
+		
+	</head>
+	
+	<body>
+		
+		<!-- Modal-->
+		<aside id="modalBackground">
+		
+			<div id="modalFrame">
+			
+				<div id="modalHeader"></div>
+				
+				<div id="modalContent"></div>
+				
+				<div id="modalFooter">
+				
+					<a id="mfClose">Go Back</a>
+				
+				</div>
+			
+			</div>
+			
+		</aside>
+		
+		<!-- Page Scaffold -->
+		<div class="page1">
+		
+			<!-- Main Frame -->
+			<div class="mainFrame">
+				
+				<!-- Main Title -->
+				<a id="mfTitle" href="../">Outboard Motors Australia</a>
+				
+				<!-- Main Header -->
+				<div id="mfHeader">
+				
+					<!-- Logo -->
+					<img id="mfhLogo" src="../src/images/logo.jpg"/>
+					
+					<!-- Nav Bar -->
+					<nav id="mfhNav">
+						
+						<a class="mfhnLink" id="mfhnLinks" href="../links">Links</a>
+						<a class="mfhnLink" id="mfhnService" href="../service">Service</a>						
+						<a class="mfhnLink" id="mfhnLocations" href="../locations">Locations</a>
+						<a class="mfhnLink mfhnHere" id="mfhnProducts">Products</a>
+						<a class="mfhnLink" id="mfhnAbout" href="../about">About Us</a>
+						<a class="mfhnLink" id="mfhnHome" href="../">Home</a>
+						
+					</nav>
+				
+				</div>
+				
+				<!-- Main Content -->
+				<div id="mfContent">
+					
+					<!-- Product Nav -->
+					<ol id="mfcPowerNav">
+					
+						<li class="pnPower" id="pnImageGallery">Image Gallery</li>
+					
+					</ol>
+					
+					<!-- Product Content -->
+					<div id="mfcProduct">
+						
+						<!-- Info -->
+						<div id="mfcpInfo">
+							
+							<!-- Nav -->
+							<div id="mfcpiNav">
+							
+								<a class="mfcpinItem mfcpinLeft mfcpinSelected" id="productFeatures">Features</a>
+								<a class="mfcpinItem" id="productSpecs">Specifications</a>
+								<a class="mfcpinItem" id="productApps">Applications</a>
+								<a class="mfcpinItem mfcpinRight" id="productResources">Resources</a>
+								
+							</div>
+							
+							<!-- Content -->
+							<div id="mfcpiContent">
+								
+								<!-- Model -->
+								<div id="mfcpicModel">
+								
+									<div id="mfcpicModelLabel">Model:</div>
+									<div id="mfcpicModelText"></div>
+									
+								</div>
+								
+								<!-- Details -->
+								<div id="mfcpicInfo">
+									
+									<!-- Features -->
+									<ul class="infoList" id="featuresList">
+										
+										<li class="featuresListItem">
+										
+											<div class="fListItemLabel">Application:</div>
+											<select class="fListItemPicker" id="variantPicker" name="variant" tabindex="1"></select>
+											
+										</li>
+										<li class="featuresListItem">
+										
+											<div class="fListItemLabel">Transom:</div>
+											<select class="fListItemPicker" id="transomPicker" name="transom" tabindex="2"></select>
+											
+										</li>
+										<li class="featuresListItem">
+										
+											<div class="fListItemLabel">Steering:</div>
+											<select class="fListItemPicker" id="steeringPicker" name="steering" tabindex="3"></select>
+											
+										</li>
+										<li class="featuresListItem">
+										
+											<div class="fListItemLabel">Starter:</div>
+											<select class="fListItemPicker" id="starterPicker" name="starter" tabindex="4"></select>
+											
+										</li><li class="featuresListItem">
+										
+											<div class="fListItemLabel">Trim:</div>
+											<select class="fListItemPicker" id="trimPicker" name="trim" tabindex="5"></select>
+											
+										</li>
+										
+									</ul>
+									
+									<!-- Specs -->
+									<ul class="infoList" id="specsList">
+										
+										<li class="specsListItem">
+										
+											<div class="sListItemLabel">Power at Shaft:</div>
+											<div class="sListItemText" id="specsPower"></div>
+											
+										</li>
+										<li class="specsListItem">
+										
+											<div class="sListItemLabel">Displacement:</div>
+											<div class="sListItemText" id="specsDisplacement"></div>
+											
+										</li>
+										<li class="specsListItem">
+										
+											<div class="sListItemLabel">Bore x Stroke:</div>
+											<div class="sListItemText" id="specsBoreStroke"></div>
+											
+										</li>
+										<li class="specsListItem">
+										
+											<div class="sListItemLabel">Gear Ratio:</div>
+											<div class="sListItemText" id="specsGearRatio"></div>
+											
+										</li>
+										<li class="specsListItem">
+										
+											<div class="sListItemLabel">RPM Range:</div>
+											<div class="sListItemText" id="specsRpmRange"></div>
+											
+										</li>
+										<li class="specsListItem">
+										
+											<div class="sListItemLabel">Transom Height:</div>
+											<div class="sListItemText" id="specsTransomHeight"></div>
+											
+										</li>
+										<li class="specsListItem">
+										
+											<div class="sListItemLabel">Dry Weight:</div>
+											<div class="sListItemText" id="specsDryWeight"></div>
+											
+										</li>
+										
+									</ul>
+									
+									<!-- Apps -->
+									<div class="infoList" id="appsInfo">
+									
+										<p>Text here</p>
+									
+									</div>
+									
+									<!-- Resources -->
+									<div class="infoList" id="resourcesList">
+									
+										<a id="resourceManual"><img src="../src/images/icons/pdf.png"/>Download User's Manual</a>
+									
+									</div>
+									
+								</div>
+								
+								<img id="mfcpicImage" src=""/>
+								
+								<a id="mfcpicBuy" tabindex="0"></a>
+							
+							</div>
+						
+						</div>
+						
+						<!-- Image Gallery -->
+						<div id="mfcpGallery">
+						
+							<div id="productGallery">
+							
+								<img src="../src/images/products/gallery/1.jpg"/>
+								<img src="../src/images/products/gallery/2.jpg"/>
+								<img src="../src/images/products/gallery/3.jpg"/>
+								<img src="../src/images/products/gallery/4.jpg"/>
+								<img src="../src/images/products/gallery/5.jpg"/>
+								<img src="../src/images/products/gallery/6.jpg"/>
+								<img src="../src/images/products/gallery/7.jpg"/>
+								<img src="../src/images/products/gallery/8.jpg"/>
+								<img src="../src/images/products/gallery/9.jpg"/>
+								<img src="../src/images/products/gallery/10.jpg"/>
+								<img src="../src/images/products/gallery/11.jpg"/>
+								<img src="../src/images/products/gallery/12.jpg"/>
+								<img src="../src/images/products/gallery/13.jpg"/>
+								<img src="../src/images/products/gallery/14.jpg"/>
+							
+							</div>
+						
+						</div>
+						
+						<!-- Legend -->
+						<div id="mfcpLegend">
+						
+							<table>
+							
+								<tr>
+								
+									<th colspan="2">Options</th>
+									<td><div>H</div><p>Manual Steering</p></td>
+									<td><div>R</div><p>Remote Steering</p></td>
+									
+								</tr>
+								<tr>
+								
+									<td><div>TP</div><p>Titan Pleasure</p></td>
+									<td><div>M</div><p>Manual Start</p></td>
+									<td><div>S</div><p>Short Transom</p></td>
+									<td><div>E</div><p>Electric Trim</p></td>
+								
+								</tr>
+								<tr>
+								
+									<td><div>TW</div><p>Titan Work</p></td>
+									<td><div>E</div><p>Electric Start</p></td>
+									<td><div>L</div><p>Long Transom</p></td>
+									<td><div>D</div><p>Hydro Trim</p></td>
+								
+								</tr>
+								<tr>
+								
+									<td><div>TS</div><p>Titan Sail</p></td>
+									<td><div>W</div><p>Electric &amp; Manual Start</p></td>
+									<td><div>X</div><p>Extra-long Transom</p></td>
+									<td><div>O</div><p>Oil Injection</p></td>
+								
+								</tr>
+							
+							</table>
+						
+						</div>
+						
+					</div>
+						
+				</div>
+				
+			</div>
+		
+		</div>
+		<div class="page2">
+		
+			<!-- Footer Frame -->
+			<footer class="footerFrame">
+			
+				<div id="ffCentre">
+				
+					<a class="footLink" id="ffcContact">Contact</a>
+					
+					<a class="footLink" id="ffcShipping">Shipping</a>
+					
+					<a class="footLink" id="ffcRefunds">Refunds</a>
+					
+				</div>
+			
+			</footer>
+		
+		</div>
+		
+		<!-- Preloader -->
+		<aside id="preloader"></aside>
+		
+		<!-- Construction Scripts -->
+		<script src="../src/js/all.js"></script>
+		<script src="index.js"></script>
+		
+	</body>
+
+</html>
