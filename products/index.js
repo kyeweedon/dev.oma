@@ -653,6 +653,7 @@ var currentTransom;
 var currentSteering;
 var currentStarter;
 var currentTrim;
+var currentProduct;
 // } Initialise
 
 // } Start
@@ -1070,8 +1071,54 @@ $('#mfcpicBuy').on({
 	
 	click:function() {
 		
+		// { Buy form
+		$('#modalHeader').html('Buy it now!');
+		$('#modalContent').html(
+			'You\'re just one step away from purchasing your new Titan outboard motor! Just select your prefered pickup location & click "Buy" to be taken to our secure credit card processing page' +
+			
+			// { Pay form
+			'<form action="https://vault.safepay.com.au/cgi-bin/test_payment.pl" method="post">' +
+			
+			// { Silent data
+			'<input type="hidden" name="' + currentProduct.model + '" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '" />' +
+			'<input type="hidden" name="vendor_name" value="oma" />' +
+			// } Silent data
+			
+			// { Pickup selector
+			'<select type="" name="pickup" value="">' +
+			
+			'</select>' +
+			// } Pickup selector
+			
+			// { Buy button
+			'<input type="submit" value="Buy" />' +
+			// } Buy button
+			
+			'</form>' +
+			// { Pay form
+			
+			// { Security tag
+			'<a href="https://vault.directone.com.au/html/contacts/vendor_link.html"><img border="0" src="https://vault.directone.com.au/general_images/directlogo.gif" alt="Powered by DirectOne Payment Solutions"></a>' +
+			// } Security tag
+			
+			// { Multiples
+			'<div>' +
+			
+				'<p>If you\'d like to purchase multiple motors, please contact <strong>Peter Osborn</strong> for pricing' +
+				
+					'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
+					'<p>(M) 0408 853 994</p>' +
+				
+				'</p>' +
+			
+			'</div>'
+			// } Multiples
+			
+		);
+		// } Buy form
 		
 		// { Temp Notice
+		/*
 		$('#modalHeader').html('Coming Soon!');
 		$('#modalContent').html(
 			'We\'re currently in the process of upgrading to a brand new ordering system. In the meantime please email or call us to place your order!' +
@@ -1079,9 +1126,12 @@ $('#mfcpicBuy').on({
 			'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
 			'<p>(M) 0408 853 994</p>'
 		);
-		$('#modalBackground').fadeIn();
+		*/
 		// } Temp Notice
 		
+		// { Show modal
+		$('#modalBackground').fadeIn();
+		// } Show modal
 	}
 	
 });
