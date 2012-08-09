@@ -1095,7 +1095,7 @@ $('#mfcpicBuy').on({
 			// } Buy button
 			
 			'</form>' +
-			// { Pay form
+			// } Pay form
 			
 			// { Security tag
 			'<a href="https://vault.directone.com.au/html/contacts/vendor_link.html"><img border="0" src="https://vault.directone.com.au/general_images/directlogo.gif" alt="Powered by DirectOne Payment Solutions"></a>' +
@@ -1117,8 +1117,8 @@ $('#mfcpicBuy').on({
 		);
 		// } Buy form
 		
-		// { Temp Notice
 		/*
+		// { Temp Notice
 		$('#modalHeader').html('Coming Soon!');
 		$('#modalContent').html(
 			'We\'re currently in the process of upgrading to a brand new ordering system. In the meantime please email or call us to place your order!' +
@@ -1126,8 +1126,8 @@ $('#mfcpicBuy').on({
 			'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
 			'<p>(M) 0408 853 994</p>'
 		);
-		*/
 		// } Temp Notice
+		*/
 		
 		// { Show modal
 		$('#modalBackground').fadeIn();
