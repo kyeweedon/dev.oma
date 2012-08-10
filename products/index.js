@@ -1071,49 +1071,100 @@ $('#mfcpicBuy').on({
 	
 	click:function() {
 		
+        // { Build location options
+        var locationOptions = "";
+        var locOptsTemp = [];
+        per(locations, function(i, location) {
+            
+            // { Append
+            locOptsTemp.push(location.state + ': ' + location.suburb);
+            // } Append
+            
+        });
+        
+        // { Sort
+		locOptsTemp.sort(function(a, b) {
+		
+			if(a < b) {
+			
+				return -1;
+			
+			}
+			else {
+			
+				return 1;
+			
+			}
+		
+		});
+		// } Sort
+		
+		// { Stringify
+		per(locOptsTemp, function(i, locOpt) {
+			
+			locationOptions += '<option value="' + locOpt + '">' + locOpt + '</option>';
+			
+		});
+		// } Stringify
+		
+        // } Build location options
+                
 		// { Buy form
 		$('#modalHeader').html('Buy it now!');
 		$('#modalContent').html(
-			'You\'re just one step away from purchasing your new Titan outboard motor! Just select your prefered pickup location & click "Buy" to be taken to our secure credit card processing page' +
+			'<div id="buyForm">' +
 			
-			// { Pay form
-			'<form action="https://vault.safepay.com.au/cgi-bin/test_payment.pl" method="post">' +
-			
-			// { Silent data
-			'<input type="hidden" name="' + currentProduct.model + '" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '" />' +
-			'<input type="hidden" name="vendor_name" value="oma" />' +
-			// } Silent data
-			
-			// { Pickup selector
-			'<select type="" name="pickup" value="">' +
-			
-			'</select>' +
-			// } Pickup selector
-			
-			// { Buy button
-			'<input type="submit" value="Buy" />' +
-			// } Buy button
-			
-			'</form>' +
-			// } Pay form
-			
-			// { Security tag
-			'<a href="https://vault.directone.com.au/html/contacts/vendor_link.html"><img border="0" src="https://vault.directone.com.au/general_images/directlogo.gif" alt="Powered by DirectOne Payment Solutions"></a>' +
-			// } Security tag
-			
-			// { Multiples
-			'<div>' +
-			
-				'<p>If you\'d like to purchase multiple motors, please contact <strong>Peter Osborn</strong> for pricing' +
+				'<p>Just fill in some details & we\'ll take to to our secure credit card processing page!</p>' +
 				
-					'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
-					'<p>(M) 0408 853 994</p>' +
+				// { Pay form
+				'<form action="https://vault.safepay.com.au/cgi-bin/test_payment.pl" method="post">' +
 				
-				'</p>' +
-			
+				// { Silent data
+				'<input type="hidden" name="' + currentProduct.model + '" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '" />' +
+				'<input type="hidden" name="vendor_name" value="oma" />' +
+				'<input type="hidden" name="return_link_text" value="Return to Outboard Motors Australia" />' +
+				'<input type="hidden" name="return_link_url" value="http://www.outboardmotorsaustralia.com.au/products" />' +
+				'<input type="hidden" name="information_fields" value="Name, Phone, Email, Pickup" />' +
+				// } Silent data
+				
+				// { Customer data
+				'<input id="postName" type="text" name="Name" placeholder="Your name" />' +
+				'<input id="postPhone" type="tel" name="Phone" placeholder="Contact number" />' +
+				'<input id="postEmail" type="email" name="Email" placeholder="Email address" />' +
+				'<select id="postPickup" type="" name="Pickup" value="">' +
+				
+					'<option value="none">Select a Suburb...</option>' +
+					locationOptions +
+
+				'</select>' +
+				// } Customer data
+				
+				// { Buy button
+				'<a id="toPayment">Proceed to Payment</a>' +
+				// } Buy button
+				
+				'</form>' +
+				// } Pay form
+				
+				// { Security tag
+				//'<a href="https://vault.directone.com.au/html/contacts/vendor_link.html" target="_blank"><img border="0" src="https://vault.directone.com.au/general_images/directlogo.gif" alt="Powered by DirectOne Payment Solutions"></a>' +
+				// } Security tag
+				
+				// { Multiples
+				'<div>' +
+				
+					'<p>If you\'d like to purchase multiple motors, please contact <strong>Peter Osborn</strong> for pricing' +
+					
+						'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
+						'<p>(M) 0408 853 994</p>' +
+					
+					'</p>' +
+				
+				'</div>' +
+				// } Multiples
+				
 			'</div>'
-			// } Multiples
-			
+					
 		);
 		// } Buy form
 		
@@ -1136,6 +1187,31 @@ $('#mfcpicBuy').on({
 	
 });
 // } Buy Button
+
+// { To Payment
+$('#modalContent').on({
+	
+	click:function() {
+		
+		// { Validate
+		if(
+			$('#postName').val() !== '' &&
+			$('#postPhone').val() !== '' &&
+			$('#postEmail').val() !== '' &&
+			$('#postPickup').val() !== 'none'
+		) {
+		
+			// { Post
+			$('#buyForm').children('form').submit();
+			// } Post
+		
+		}
+		// } Validate
+		
+	}
+	
+}, '#toPayment');
+// } To Payment
 
 // } Handlers
 // ================
