@@ -1,4 +1,4 @@
-
+"use strict";
 	// Kye Weedon
 	// kyeweedon.com
 	// June 2012
@@ -31,7 +31,7 @@ var products = {
 		typeTransom:'Short',
 		typeTrim:'Manual',
 		blurb:'',
-		listPrice:'$692',
+		listPrice:'$799',
 		imageMain:'3hp.jpg',
 		imageDims:'2.jpg',
 		images:[
@@ -553,37 +553,37 @@ var products = {
 		],
 		manual:'Titan 55HP Manual.pdf'
 		
-	},
-	'TP65AERTOL':{
-		
-		model:'TP65AERTOL',
-		variant:'Pleasure',
-		powerCategory:65,
-		displacement:'-cc',
-		boreStroke:'- x -',
-		gearRatio:'- (-/-)',
-		rpmRange:'-',
-		shaftOutput:'- (-) @ -rpm',
-		altOutput:'-V -W',
-		transomHeight:'-mm (-")',
-		dryWeight:'-kg',
-		typeStart:'Electric',
-		typeSteering:'Remote',
-		typeTransom:'Long',
-		typeTrim:'Electric',
-		blurb:'',
-		listPrice:'$-',
-		imageMain:'-hp.jpg',
-		imageDims:'-.jpg',
-		images:[
-			
-			'1.jpg',
-			'2.jpb',
-			'3.jpg'
-		],
-		manual:'Titan 65HP Manual.pdf'
-		
-	},
+	}
+//	'TP65AERTOL':{
+//		
+//		model:'TP65AERTOL',
+//		variant:'Pleasure',
+//		powerCategory:65,
+//		displacement:'-cc',
+//		boreStroke:'- x -',
+//		gearRatio:'- (-/-)',
+//		rpmRange:'-',
+//		shaftOutput:'- (-) @ -rpm',
+//		altOutput:'-V -W',
+//		transomHeight:'-mm (-")',
+//		dryWeight:'-kg',
+//		typeStart:'Electric',
+//		typeSteering:'Remote',
+//		typeTransom:'Long',
+//		typeTrim:'Electric',
+//		blurb:'',
+//		listPrice:'$-',
+//		imageMain:'-hp.jpg',
+//		imageDims:'-.jpg',
+//		images:[
+//			
+//			'1.jpg',
+//			'2.jpb',
+//			'3.jpg'
+//		],
+//		manual:'Titan 65HP Manual.pdf'
+//		
+//	}
 	
 };
 // } Define Products
@@ -1164,7 +1164,7 @@ $('#mfcpicBuy').on({
 				// } Multiples
 				
 			'</div>'
-					
+		
 		);
 		// } Buy form
 		
@@ -1183,6 +1183,7 @@ $('#mfcpicBuy').on({
 		// { Show modal
 		$('#modalBackground').fadeIn();
 		// } Show modal
+		
 	}
 	
 });
