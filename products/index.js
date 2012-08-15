@@ -1,4 +1,4 @@
-"use strict";
+
 	// Kye Weedon
 	// kyeweedon.com
 	// June 2012
@@ -1117,31 +1117,38 @@ $('#mfcpicBuy').on({
 				'<p>Just fill in some details & we\'ll take to to our secure credit card processing page!</p>' +
 				
 				// { Pay form
-				'<form action="https://vault.safepay.com.au/cgi-bin/test_payment.pl" method="post">' +
+				'<form action="../src/php/PHP_VPC_3Party_DO.php" method="post">' +
 				
-				// { Silent data
-				'<input type="hidden" name="' + currentProduct.model + '" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '" />' +
-				'<input type="hidden" name="vendor_name" value="oma" />' +
-				'<input type="hidden" name="return_link_text" value="Return to Outboard Motors Australia" />' +
-				'<input type="hidden" name="return_link_url" value="http://www.outboardmotorsaustralia.com.au/products" />' +
-				'<input type="hidden" name="information_fields" value="Name, Phone, Email, Pickup" />' +
-				// } Silent data
-				
-				// { Customer data
-				'<input id="postName" type="text" name="Name" placeholder="Your name" />' +
-				'<input id="postPhone" type="tel" name="Phone" placeholder="Contact number" />' +
-				'<input id="postEmail" type="email" name="Email" placeholder="Email address" />' +
-				'<select id="postPickup" type="" name="Pickup" value="">' +
-				
-					'<option value="none">Select a Suburb...</option>' +
-					locationOptions +
-
-				'</select>' +
-				// } Customer data
-				
-				// { Buy button
-				'<a id="toPayment">Proceed to Payment</a>' +
-				// } Buy button
+					// { Silent data
+					'<input type="hidden" name="virtualPaymentClientURL" value="https://migs.mastercard.com.au/vpcpay" />' +
+					'<input type="hidden" name="vpc_Version" value="1" />' +
+					'<input type="hidden" name="vpc_Command" value="pay" />' +
+					'<input type="hidden" name="vpc_AccessCode" value="A1706E8D" />' +
+					'<input type="hidden" name="vpc_MerchTxnRef" value="test123" />' +
+					'<input type="hidden" name="vpc_Merchant" value="TESTOUTMOTCOM01" />' +
+					'<input type="hidden" name="vpc_OrderInfo" value="' + currentProduct.model + '" />' +
+					'<input type="hidden" name="vpc_Amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
+					'<input type="hidden" name="vpc_ReturnURL" value="http://outboardmotorsaustralia.com.au/src/php/PHP_VPC_3Party_DR.php" />' +
+					'<input type="hidden" name="vpc_Locale" value="en" />' +
+					// } Silent data
+					
+					// { Customer data
+					/*
+					'<input id="postName" type="text" name="Name" placeholder="Your name" />' +
+					'<input id="postPhone" type="tel" name="Phone" placeholder="Contact number" />' +
+					'<input id="postEmail" type="email" name="Email" placeholder="Email address" />' +
+					'<select id="postPickup" type="" name="Pickup" value="">' +
+					
+						'<option value="none">Select a Suburb...</option>' +
+						locationOptions +
+	
+					'</select>' +
+					*/
+					// } Customer data
+					
+					// { Buy button
+					'<a id="toPayment">Proceed to Payment</a>' +
+					// } Buy button
 				
 				'</form>' +
 				// } Pay form
@@ -1195,18 +1202,19 @@ $('#modalContent').on({
 	click:function() {
 		
 		// { Validate
+		/*
 		if(
 			$('#postName').val() !== '' &&
 			$('#postPhone').val() !== '' &&
 			$('#postEmail').val() !== '' &&
 			$('#postPickup').val() !== 'none'
 		) {
-		
+		*/
 			// { Post
 			$('#buyForm').children('form').submit();
 			// } Post
 		
-		}
+		//}
 		// } Validate
 		
 	}
