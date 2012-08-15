@@ -1128,7 +1128,7 @@ $('#mfcpicBuy').on({
 					'<input type="hidden" name="vpc_Merchant" value="TESTOUTMOTCOM01" />' +
 					'<input type="hidden" name="vpc_OrderInfo" value="' + currentProduct.model + '" />' +
 					'<input type="hidden" name="vpc_Amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
-					'<input type="hidden" name="vpc_ReturnURL" value="http://outboardmotorsaustralia.com.au/src/php/PHP_VPC_3Party_DR.php" />' +
+					'<input type="hidden" name="vpc_ReturnURL" value="http://dev.kye.io/oma/src/php/PHP_VPC_3Party_DR.php" />' +
 					'<input type="hidden" name="vpc_Locale" value="en" />' +
 					// } Silent data
 					
