@@ -1117,33 +1117,25 @@ $('#mfcpicBuy').on({
 				'<p>Just fill in some details & we\'ll take to to our secure credit card processing page!</p>' +
 				
 				// { Pay form
-				'<form action="../src/php/PHP_VPC_3Party_DO.php" method="post">' +
+				'<form action="../src/php/vpcSend.php" method="post">' +
 				
 					// { Silent data
-					'<input type="hidden" name="virtualPaymentClientURL" value="https://migs.mastercard.com.au/vpcpay" />' +
-					'<input type="hidden" name="vpc_Version" value="1" />' +
-					'<input type="hidden" name="vpc_Command" value="pay" />' +
-					'<input type="hidden" name="vpc_AccessCode" value="A1706E8D" />' +
-					'<input type="hidden" name="vpc_MerchTxnRef" value="test123" />' +
-					'<input type="hidden" name="vpc_Merchant" value="TESTOUTMOTCOM01" />' +
-					'<input type="hidden" name="vpc_OrderInfo" value="' + currentProduct.model + '" />' +
-					'<input type="hidden" name="vpc_Amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
-					'<input type="hidden" name="vpc_ReturnURL" value="http://outboardmotorsaustralia.com.au/src/php/PHP_VPC_3Party_DR.php" />' +
-					'<input type="hidden" name="vpc_Locale" value="en" />' +
+					'<input type="hidden" name="product" value="' + currentProduct.model + '" />' +
+					'<input type="hidden" name="amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
 					// } Silent data
 					
 					// { Customer data
-					/*
-					'<input id="postName" type="text" name="Name" placeholder="Your name" />' +
-					'<input id="postPhone" type="tel" name="Phone" placeholder="Contact number" />' +
-					'<input id="postEmail" type="email" name="Email" placeholder="Email address" />' +
-					'<select id="postPickup" type="" name="Pickup" value="">' +
+					
+					'<input id="postName" type="text" name="name" placeholder="Your name" value="Kye Weedon"/>' + // !DEV remove default value
+					'<input id="postPhone" type="tel" name="phone" placeholder="Contact number" value="0438453566"/>' + // !DEV remove default value
+					'<input id="postEmail" type="email" name="email" placeholder="Email address" value="mail@kyeweedon.com"/>' + // !DEV remove default value
+					'<select id="postPickup" type="" name="pickup" value="">' +
 					
 						'<option value="none">Select a Suburb...</option>' +
 						locationOptions +
 	
 					'</select>' +
-					*/
+					
 					// } Customer data
 					
 					// { Buy button
@@ -1152,10 +1144,6 @@ $('#mfcpicBuy').on({
 				
 				'</form>' +
 				// } Pay form
-				
-				// { Security tag
-				//'<a href="https://vault.directone.com.au/html/contacts/vendor_link.html" target="_blank"><img border="0" src="https://vault.directone.com.au/general_images/directlogo.gif" alt="Powered by DirectOne Payment Solutions"></a>' +
-				// } Security tag
 				
 				// { Multiples
 				'<div>' +
@@ -1175,18 +1163,6 @@ $('#mfcpicBuy').on({
 		);
 		// } Buy form
 		
-		/*
-		// { Temp Notice
-		$('#modalHeader').html('Coming Soon!');
-		$('#modalContent').html(
-			'We\'re currently in the process of upgrading to a brand new ordering system. In the meantime please email or call us to place your order!' +
-			'<h3>Peter Osborn</h3>' +
-			'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
-			'<p>(M) 0408 853 994</p>'
-		);
-		// } Temp Notice
-		*/
-		
 		// { Show modal
 		$('#modalBackground').fadeIn();
 		// } Show modal
@@ -1202,19 +1178,19 @@ $('#modalContent').on({
 	click:function() {
 		
 		// { Validate
-		/*
+		
 		if(
 			$('#postName').val() !== '' &&
 			$('#postPhone').val() !== '' &&
 			$('#postEmail').val() !== '' &&
 			$('#postPickup').val() !== 'none'
 		) {
-		*/
+		
 			// { Post
 			$('#buyForm').children('form').submit();
 			// } Post
-		
-		//}
+			
+		}
 		// } Validate
 		
 	}

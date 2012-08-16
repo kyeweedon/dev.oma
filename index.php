@@ -173,6 +173,22 @@
 		<script src="src/js/all.js"></script>
 		<script src="index.js"></script>
 		
+		<?php
+		
+			// { On failed transaction
+			if(isset($_GET['code'])) {
+		
+				echo '<script>' .
+				
+					'alert("There was an error processing your payment!\nPlease try again.\n\nError: ' . $_GET['note'] . '");' .
+				
+				'</script>';
+		
+			}
+			// } On failed transaction
+			
+		?>
+		
 	</body>
 
 </html>

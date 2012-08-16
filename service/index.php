@@ -72,10 +72,10 @@
 					
 					<div id="serviceText">
 						
-						<p>Outboard Motors Australia continues to monitor each and every unit sold through our “Book & Record” program.</p>
+						<p>Outboard Motors Australia continues to monitor each and every unit sold through our "Book & Record" program.</p>
 						<p>Book & Record is our computer data base interactive system for each owner to check the status of their engine in real-time. This means that you the owner can retrieve important information such as the date of your last engine service, the date the next service is due and a range of technical data designed to keep you informed and ahead of possible engine failure, preventative maintenance not just in time repairs.</p>
 						<p>Book & Record improves communication all-round as the data is also available to your dealer our distribution chain and engine manufacturer speeding up warranty approval and recommendation of spares and delivery.</p>
-						<p>What’s the result? Our commitment to Service can only get better as we commit to deliver a high quality product as well as post sales service excellence.</p>
+						<p>What's the result? Our commitment to Service can only get better as we commit to deliver a high quality product as well as post sales service excellence.</p>
 
 					</div>
 						
@@ -109,6 +109,24 @@
 		<!-- Construction Scripts -->
 		<script src="../src/js/all.js"></script>
 		<script src="index.js"></script>
+		
+		<?php
+		
+			// { On failed transaction
+			if(isset($_GET['code'])) {
+				
+				$pickup = substr($_GET['pickup'], strpos($_GET['pickup'], ':') + 2);
+				
+				echo '<script>' .
+				
+					'alert("Purchase complete!\nA recipt has been sent to ' . $_GET['email'] . ' for your records.\nWe will be in touch when your motor arrives in ' . $pickup . '");' .
+				
+				'</script>';
+		
+			}
+			// } On failed transaction
+			
+		?>
 		
 	</body>
 
