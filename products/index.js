@@ -1120,8 +1120,21 @@ $('#mfcpicBuy').on({
 				'<form action="../src/php/vpcSend.php" method="post">' +
 				
 					// { Silent data
+<<<<<<< HEAD
 					'<input type="hidden" name="product" value="' + currentProduct.model + '" />' +
 					'<input type="hidden" name="amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
+=======
+					'<input type="hidden" name="virtualPaymentClientURL" value="https://migs.mastercard.com.au/vpcpay" />' +
+					'<input type="hidden" name="vpc_Version" value="1" />' +
+					'<input type="hidden" name="vpc_Command" value="pay" />' +
+					'<input type="hidden" name="vpc_AccessCode" value="A1706E8D" />' +
+					'<input type="hidden" name="vpc_MerchTxnRef" value="test123" />' +
+					'<input type="hidden" name="vpc_Merchant" value="TESTOUTMOTCOM01" />' +
+					'<input type="hidden" name="vpc_OrderInfo" value="' + currentProduct.model + '" />' +
+					'<input type="hidden" name="vpc_Amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
+					'<input type="hidden" name="vpc_ReturnURL" value="http://dev.kye.io/oma/src/php/PHP_VPC_3Party_DR.php" />' +
+					'<input type="hidden" name="vpc_Locale" value="en" />' +
+>>>>>>> a0d321bbcf5ebf22d8514dfc6d75f31bcddfc694
 					// } Silent data
 					
 					// { Customer data
