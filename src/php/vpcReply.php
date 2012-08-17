@@ -3,6 +3,9 @@
 	error_reporting(E_ALL); //!DEV
 	ini_set('display_errors', '1'); //!DEV
 	
+	require('class.phpmailer.php');
+	require('class.smtp.php');
+		
 	// ===============
 	// { Functions
 	
@@ -311,10 +314,75 @@
 	// { Success
 	if($txnResponseCode == 0) {
 		
-		// { Email
-		mail('kye@outboardmotorsaustralia.com.au', 'Order: ' . $_GET['product'] . ' to ' . $_GET['pickup'], 'Name: ' . $_GET['name'] . '\nPhone: ' . $_GET['phone'] . '\nEmail: ' . $_GET['email'] . '\nProduct: ' . $_GET['product'] . '\nPickup: ' . $_GET['pickup'])
-		or die('Error sending mail');
-		// } Email
+		// { Email Sales
+		
+		// { Setup Mailer
+		$mail = new PHPMailer();
+		
+		$mail->IsSMTP();
+		$mail->SMTPDebug = 1; //!DEV
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = 'ssl';
+		
+		$mail->Host = 'smtp.gmail.com';
+		$mail->Port = 465;
+		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
+		$mail->Password = 'omaauto12';
+		// } Setup Mailer
+		
+		// { Mail
+		$mail->SetFrom('noreply@outboardmotorsaustralia.com.au', 'PURCHASE ORDER');
+		$mail->AddAddress('sales@outboardmotorsaustralia.com.au');
+		$mail->AddAddress('kye@outboardmotorsaustralia.com.au');
+		
+		$mail->Subject = $_GET['product'] . ' to ' . $_GET['pickup'];
+		$mail->Body = 'Name: ' . $_GET['name'] . "\r\nPhone: " . $_GET['phone'] . "\r\nEmail: " . $_GET['email'] . "\r\nProduct: " . $_GET['product'] . "\r\nPickup: " . $_GET['pickup'];
+		
+		$mail->Send() or die('Error: ' . $mail->ErrorInfo);
+		// } Mail
+		
+		// } Email Sales
+		
+		// { Email Customer
+		
+		// { Setup Mailer
+		$mail = new PHPMailer();
+		
+		$mail->IsSMTP();
+		$mail->SMTPDebug = 1; //!DEV
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = 'ssl';
+		
+		$mail->Host = 'smtp.gmail.com';
+		$mail->Port = 465;
+		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
+		$mail->Password = 'omaauto12';
+		// } Setup Mailer
+		
+		// { Mail
+		$mail->SetFrom('noreply@outboardmotorsaustralia.com.au', 'Outboard Motors Australia');
+		$mail->AddAddress($_GET['email']);
+		
+		$mail->Subject = 'Purchase reciept';
+		$mail->Body = 'Hi ' . $_GET['name'] . ',' .
+			"\r\n" .
+			'Thank you for your order! Please keep this email as a record of your purchase.' .
+			"\r\n" .
+			"\r\n" .
+			'Product: ' . $_GET['product'] . 
+			"\r\n" .
+			'Purchase price: $' . substr($amount, 0, -2) .
+			"\r\n" .
+			'Pickup location: ' . $_GET['pickup'] .
+			"\r\n\r\n" .
+			'Once your order has arrived, we will call you to let you know.' .
+			"\r\n" .
+			'Thanks again, & don\'t hesitate to contact us if we can help you further.';
+		
+		$mail->Send() or die('Error: ' . $mail->ErrorInfo);
+		// } Mail
+		
+		// } Email Customer
 		
 		header('location:../../service/index.php?code=' . $txnResponseCode . '&note=' . $message . '&email=' . $_GET['email'] . '&pickup=' . $_GET['pickup']);
 		
