@@ -5,10 +5,19 @@
 
 // { jsHint rules
 /*jshint multistr:true */
+/*global per, Galleria */
 // } jsHint rules
 
-// ===========
-// { Start
+// { Initialise
+var currentPower;
+var currentPowerProducts;
+var currentVariant;
+var currentTransom;
+var currentSteering;
+var currentStarter;
+var currentTrim;
+var currentProduct;
+// } Initialise
 
 // { Define Products
 var products = {
@@ -405,7 +414,7 @@ var products = {
 		
 	},
 //	'TP40AWRL':{
-//		
+//
 //		model:'TP40AWRL',
 //		variant:'Pleasure',
 //		powerCategory:40,
@@ -426,13 +435,13 @@ var products = {
 //		imageMain:'40hp.jpg',
 //		imageDims:'2.jpg',
 //		images:[
-//			
+//
 //			'1.jpg',
 //			'2.jpb',
 //			'3.jpg'
 //		],
 //		manual:'Titan 40HP Manual.pdf'
-//		
+//
 //	},
 	'TW40AMHL':{
 		
@@ -555,7 +564,7 @@ var products = {
 		
 	}
 //	'TP65AERTOL':{
-//		
+//
 //		model:'TP65AERTOL',
 //		variant:'Pleasure',
 //		powerCategory:65,
@@ -576,17 +585,171 @@ var products = {
 //		imageMain:'-hp.jpg',
 //		imageDims:'-.jpg',
 //		images:[
-//			
+//
 //			'1.jpg',
 //			'2.jpb',
 //			'3.jpg'
 //		],
 //		manual:'Titan 65HP Manual.pdf'
-//		
+//
 //	}
 	
 };
 // } Define Products
+
+// =================
+// { Functions
+
+// { Populate Power Category
+function populateCurrentPowerProducts(xPower) {
+	
+	var reply = [];
+	
+	// { Per Product (check power)
+	per(products, function(i, product) {
+		
+		// { If matching power (push)
+		if(product.powerCategory === xPower) {
+			
+			// { Push
+			reply.push(product);
+			// } Push
+			
+		}
+		// } If matching power (push)
+		
+	});
+	// } Per Product (check power)
+	
+	return reply;
+	
+}
+// } Populate Power Category
+
+// { Populate Picker
+function populatePicker(xPicker, xOptions) {
+	
+	// { Reset
+	xPicker.html('');
+	// } Reset
+	
+	// { Per Option (add to picker)
+	for(var i in xOptions) { if(xOptions.hasOwnProperty(i)) {
+		
+		var option = xOptions[i];
+		
+		// Add Option
+		xPicker.append('<option value="' + option + '">' + option + '</option>');
+		
+		//console.log(option + ' added to ' + xPicker.attr('id'));
+		
+	}}
+	// } Per Option (add to picker)
+	
+	// { If Single (make default)
+	if(xOptions.length === 1) {
+		
+		xPicker.attr('disabled', 'disabled');
+		
+	}
+	else {
+		
+		xPicker.removeAttr('disabled');
+		
+	}
+	// } If Single (make default)
+	
+	// { Trigger change
+	xPicker.change();
+	// } Trigger change
+	
+}
+// } Populate Picker
+
+function populatePower(xProducts) {
+	
+	// { Determine Variants
+	
+	var optVariants = [];
+	
+	// { Per Current Product (get variant)
+	per(xProducts, function(i, product) {
+		
+		// { If novel Variant (add to Variant list)
+		if(optVariants.indexOf(product.variant) === -1) {
+			
+			// { Push
+			optVariants.push(product.variant);
+			// } Push
+			
+		}
+		// } If novel Variant (add to Variant list)
+		
+	});
+	// } Per Current Product (get variant)
+	
+	// } Determine Variants
+	
+	// { Populate variant picker
+	populatePicker($('#variantPicker'), optVariants);
+	// } Populate variant picker
+	
+	//console.log(currentPowerProducts);
+	
+}
+
+// { Determine Matching Models
+function showModel() {
+	
+	// { Per Product (Validate Options)
+	per(currentPowerProducts, function(i, product) {
+		
+		// { If match
+		if(
+			product.variant      === currentVariant  &&
+			product.typeTransom  === currentTransom  &&
+			product.typeSteering === currentSteering &&
+			product.typeStart    === currentStarter  &&
+			product.typeTrim     === currentTrim
+		) {
+			
+			// { Set current
+			currentProduct = product;
+			// } Set current
+			
+			// { Draw Model & Price
+			$('#mfcpicModelText').html(product.model);
+			$('#mfcpicBuy').html('Buy now price: ' + product.listPrice);
+			// } Draw Model & Price
+			
+			// { Draw Specs
+			$('#specsPower').html(product.shaftOutput);
+			$('#specsDisplacement').html(product.displacement);
+			$('#specsBoreStroke').html(product.boreStroke);
+			$('#specsGearRatio').html(product.gearRatio);
+			$('#specsRpmRange').html(product.rpmRange);
+			$('#specsTransomHeight').html(product.transomHeight);
+			$('#specsDryWeight').html(product.dryWeight);
+			// } Draw Specs
+			
+			// { Draw Resources
+			$('#resourceManual').attr('href', '../src/pdf/' + product.manual);
+			// } Draw Resources
+			
+		}
+		// } If match
+
+	});
+	// } Per Product (Validate Options)
+	
+}
+// } Determine Matching Models
+
+// } Functions
+// =================
+
+// ===========
+// { Start
 
 // { Define Power Categories
 
@@ -644,17 +807,6 @@ powerList.sort(function(a, b) {
 // } Sort Ascending
 
 // } Define Power Categories
-
-// { Initialise
-var currentPower;
-var currentPowerProducts;
-var currentVariant;
-var currentTransom;
-var currentSteering;
-var currentStarter;
-var currentTrim;
-var currentProduct;
-// } Initialise
 
 // } Start
 // ===========
@@ -1071,6 +1223,18 @@ $('#mfcpicBuy').on({
 	
 	click:function() {
 		
+		// { Temp Notice
+		$('#modalHeader').html('Coming Soon!');
+		$('#modalContent').html(
+			'We\'re currently in the process of upgrading to a brand new ordering system. In the meantime please email or call us to place your order!' +
+			'<h3>Peter Osborn</h3>' +
+			'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
+			'<p>(M) 0408 853 994</p>'
+		);
+		$('#modalBackground').fadeIn();
+		// } Temp Notice
+		
+		/* // Live
         // { Build location options
         var locationOptions = "";
         var locOptsTemp = [];
@@ -1166,6 +1330,7 @@ $('#mfcpicBuy').on({
 		// { Show modal
 		$('#modalBackground').fadeIn();
 		// } Show modal
+		*/ // Live
 		
 	}
 	
@@ -1200,154 +1365,3 @@ $('#modalContent').on({
 
 // } Handlers
 // ================
-
-// =================
-// { Functions
-
-// { Populate Power Category
-function populateCurrentPowerProducts(xPower) {
-	
-	var reply = [];
-	
-	// { Per Product (check power)
-	per(products, function(i, product) {
-		
-		// { If matching power (push)
-		if(product.powerCategory === xPower) {
-			
-			// { Push
-			reply.push(product);
-			// } Push
-			
-		}
-		// } If matching power (push)
-		
-	});
-	// } Per Product (check power)
-	
-	return reply;
-	
-}
-// } Populate Power Category
-
-function populatePower(xProducts) {
-	
-	// { Determine Variants
-	
-	var optVariants = [];
-	
-	// { Per Current Product (get variant)
-	per(xProducts, function(i, product) {
-		
-		// { If novel Variant (add to Variant list)
-		if(optVariants.indexOf(product.variant) === -1) {
-			
-			// { Push
-			optVariants.push(product.variant);
-			// } Push
-			
-		}
-		// } If novel Variant (add to Variant list)
-		
-	});
-	// } Per Current Product (get variant)
-	
-	// } Determine Variants
-	
-	// { Populate variant picker
-	populatePicker($('#variantPicker'), optVariants);
-	// } Populate variant picker
-	
-	//console.log(currentPowerProducts);
-	
-}
-
-// { Populate Picker
-function populatePicker(xPicker, xOptions) {
-	
-	// { Reset
-	xPicker.html('');
-	// } Reset
-	
-	// { Per Option (add to picker)
-	for(var i in xOptions) { if(xOptions.hasOwnProperty(i)) {
-		
-		var option = xOptions[i];
-		
-		// Add Option
-		xPicker.append('<option value="' + option + '">' + option + '</option>');
-		
-		//console.log(option + ' added to ' + xPicker.attr('id'));
-		
-	}}
-	// } Per Option (add to picker)
-	
-	// { If Single (make default)
-	if(xOptions.length === 1) {
-		
-		xPicker.attr('disabled', 'disabled');
-		
-	}
-	else {
-		
-		xPicker.removeAttr('disabled');
-		
-	}
-	// } If Single (make default)
-	
-	// { Trigger change
-	xPicker.change();
-	// } Trigger change
-	
-}
-// } Populate Picker
-
-// { Determine Matching Models
-function showModel() {
-	
-	// { Per Product (Validate Options)
-	per(currentPowerProducts, function(i, product) {
-		
-		// { If match
-		if(
-			product.variant      === currentVariant  &&
-			product.typeTransom  === currentTransom  &&
-			product.typeSteering === currentSteering &&
-			product.typeStart    === currentStarter  &&
-			product.typeTrim     === currentTrim
-		) {
-			
-			// { Set current
-			currentProduct = product;
-			// } Set current
-			
-			// { Draw Model & Price
-			$('#mfcpicModelText').html(product.model);
-			$('#mfcpicBuy').html('Buy now price: ' + product.listPrice);
-			// } Draw Model & Price
-			
-			// { Draw Specs
-			$('#specsPower').html(product.shaftOutput);
-			$('#specsDisplacement').html(product.displacement);
-			$('#specsBoreStroke').html(product.boreStroke);
-			$('#specsGearRatio').html(product.gearRatio);
-			$('#specsRpmRange').html(product.rpmRange);
-			$('#specsTransomHeight').html(product.transomHeight);
-			$('#specsDryWeight').html(product.dryWeight);
-			// } Draw Specs
-			
-			// { Draw Resources
-			$('#resourceManual').attr('href', '../src/pdf/' + product.manual);
-			// } Draw Resources
-			
-		}
-		// } If match
-
-	});
-	// } Per Product (Validate Options)
-	
-}
-// } Determine Matching Models
-
-// } Functions
-// =================

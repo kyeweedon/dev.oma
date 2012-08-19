@@ -108,7 +108,7 @@ var locations = [
 		state:'NT',
 		lat:-23.697653,
 		lng:133.871149,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:3,
@@ -158,7 +158,7 @@ var locations = [
 		state:'WA',
 		lat:-31.962203,
 		lng:115.985858,
-		marker:{}	
+		marker:{}
 	},
 	// } WA
 	
@@ -172,7 +172,7 @@ var locations = [
 		state:'QLD',
 		lat:-27.973401,
 		lng:152.994812,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:8,
@@ -205,7 +205,7 @@ var locations = [
 		state:'QLD',
 		lat:-16.945311,
 		lng:145.754112,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:11,
@@ -216,7 +216,7 @@ var locations = [
 		state:'QLD',
 		lat:-23.877462,
 		lng:151.273758,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:12,
@@ -227,7 +227,7 @@ var locations = [
 		state:'QLD',
 		lat:-26.180962,
 		lng:152.650979,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:13,
@@ -238,7 +238,7 @@ var locations = [
 		state:'QLD',
 		lat:-27.932594,
 		lng:153.374882,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:14,
@@ -249,7 +249,7 @@ var locations = [
 		state:'QLD',
 		lat:-27.622303,
 		lng:152.750027,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:15,
@@ -260,7 +260,7 @@ var locations = [
 		state:'QLD',
 		lat:-27.080409,
 		lng:152.978468,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:16,
@@ -271,7 +271,7 @@ var locations = [
 		state:'QLD',
 		lat:-21.182043,
 		lng:149.153891,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:17,
@@ -282,7 +282,7 @@ var locations = [
 		state:'QLD',
 		lat:-25.51651,
 		lng:152.67628,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:18,
@@ -293,7 +293,7 @@ var locations = [
 		state:'QLD',
 		lat:-20.699655,
 		lng:139.496931,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:19,
@@ -304,7 +304,7 @@ var locations = [
 		state:'QLD',
 		lat:-27.567271,
 		lng:152.973220,
-		marker:{}	
+		marker:{}
 	},
 	{
 		id:20,
@@ -348,7 +348,7 @@ var locations = [
 		state:'QLD',
 		lat:-19.269789,
 		lng:146.750473,
-		marker:{}	
+		marker:{}
 	},
 	// } QLD
 	
@@ -364,7 +364,6 @@ var locations = [
 		lng:149.244878,
 		marker:{}
 	},
-	/*
 	{
 		id:25,
 		name:'Sureas Transport',
@@ -376,7 +375,6 @@ var locations = [
 		lng:150.837788,
 		marker:{}
 	},
-	*/
 	{
 		id:26,
 		name:'Albury Freight Distribution',
@@ -388,7 +386,6 @@ var locations = [
 		lng:146.963802,
 		marker:{}
 	},
-	/*
 	{
 		id:27,
 		name:'Johnson & Kennedy',
@@ -400,7 +397,6 @@ var locations = [
 		lng:151.642254,
 		marker:{}
 	},
-	*/
 	{
 		id:28,
 		name:'Wizz Couriers',
@@ -467,7 +463,6 @@ var locations = [
 		lng:148.630120,
 		marker:{}
 	},
-	/*
 	{
 		id:34,
 		name:'Grangers Freight Lines',
@@ -501,7 +496,6 @@ var locations = [
 		lng:150.243836,
 		marker:{}
 	},
-	*/
 	{
 		id:37,
 		name:'Parsons Carriers',
@@ -524,7 +518,6 @@ var locations = [
 		lng:151.633258,
 		marker:{}
 	},
-	/*
 	{
 		id:39,
 		name:'Combined Freight',
@@ -547,7 +540,6 @@ var locations = [
 		lng:153.003464,
 		marker:{}
 	},
-	*/
 	{
 		id:41,
 		name:'Wilson River Freight',
@@ -570,7 +562,6 @@ var locations = [
 		lng:149.855033,
 		marker:{}
 	},
-	/*
 	{
 		id:43,
 		name:'Savoy Transport',
@@ -582,7 +573,6 @@ var locations = [
 		lng:149.601157,
 		marker:{}
 	},
-	*/
 	{
 		id:44,
 		name:'O\'Gradys Courriers',
@@ -594,7 +584,6 @@ var locations = [
 		lng:153.414703,
 		marker:{}
 	},
-	/*
 	{
 		id:45,
 		name:'Northwest Logistics',
@@ -628,7 +617,6 @@ var locations = [
 		lng:152.882480,
 		marker:{}
 	},
-	*/
 	{
 		id:48,
 		name:'Towers Transport',
@@ -695,7 +683,6 @@ var locations = [
 		lng:152.883237,
 		marker:{}
 	},
-	/*
 	{
 		id:54,
 		name:'Hills Transport',
@@ -707,7 +694,6 @@ var locations = [
 		lng:151.143068,
 		marker:{}
 	},
-	*/
 	{
 		id:55,
 		name:'Hunter Express',
@@ -719,7 +705,6 @@ var locations = [
 		lng:150.987462,
 		marker:{}
 	},
-	/*
 	{
 		id:56,
 		name:'Roblom Transport',
@@ -731,7 +716,6 @@ var locations = [
 		lng:152.455671,
 		marker:{}
 	},
-	*/
 	// } NSW
 	
 	// { VIC
@@ -906,7 +890,7 @@ $('.mfhnLink:not(.mfhnHere)').on({
 		
 		$(this).animate({
 			
-			fontSize:'120%'
+			fontSize:'20px'
 			
 		}, 250);
 		
@@ -915,7 +899,7 @@ $('.mfhnLink:not(.mfhnHere)').on({
 		
 		$(this).animate({
 			
-			fontSize:'100%'
+			fontSize:'16px'
 			
 		}, 250);
 		

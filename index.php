@@ -8,12 +8,8 @@
 		<title>Outboard Motors Australia</title>
 		
 		<!-- Styles -->
-		<link rel="stylesheet/less" type="text/css" href="src/css/all.less"/>
-		<link rel="stylesheet/less" type="text/css" href="index.less"/>
-		
-		<!-- Scripts -->
-		<script src="src/js/jQuery.js"></script>
-		<script src="src/js/less.js"></script>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+
 		
 	</head>
 	
@@ -169,9 +165,10 @@
 		
 		</div>
 		
-		<!-- Construction Scripts -->
-		<script src="src/js/all.js"></script>
-		<script src="index.js"></script>
+		<!-- Scripts -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+		<script src="src/js/all.min.js"></script>
+		<script src="index.min.js"></script>
 		
 		<?php
 		

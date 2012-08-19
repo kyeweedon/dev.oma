@@ -1,4 +1,4 @@
-// /delivery
+/*global per:false, states:false, locations:false, google:false */
 
 $(document).ready(function() {
 
@@ -20,140 +20,6 @@ var mapOpen = false;
 // } Misc
 
 // } Globals
-// ================
-
-// ================
-// { Handlers
-
-// { State buttons
-$('.stateNavItem').on({
-	
-	click:function() {
-		
-		// { Close others
-		$(this).siblings().removeClass('stateNavItemOpen');
-		$('#locationInitial').fadeOut();
-		// } Close others
-		
-		// { Open this
-		
-		// { Set current State
-		currentState = states[$(this).attr('state')];
-		// } Set current State
-		
-		// { Style
-		$(this).addClass('stateNavItemOpen');
-		// } Style
-		
-		// { Build Location list
-		$('#locationNav').animate({
-			
-			width:'0'
-			
-		}, 100, function() {
-			
-			// { Reset
-			$('#locationNav').html('');
-			// } Reset
-			
-			// { Per Location (build Location list)
-			per(locations, function(i, location) {
-				
-				location.popup.close();
-				
-				// { If State match (add to list)
-				if(location.state === currentState.short) {
-					
-					// { Draw
-					$('#locationNav').append('<li class="locationNavItem" id="location' + location.id + '" loc="' + location.id + '">' + location.suburb + '</li>');
-					// } Draw
-					
-				}
-				// } If State match  (add to list)
-				
-			});
-			// } Per Location (build Location list)
-			
-			// { Slide out locations
-			$('#locationNav').animate({
-				
-				width:'160px'
-				
-			}, 100);
-			// } Slide out locations
-			
-		});
-		// } Build Location list
-		
-		// { Build Map
-		drawMapState(currentState);
-		// } Build Map
-		
-		// { Build Info
-		
-		// { Manager Info
-		$('#repImage').attr('src', '../src/images/reps/' + currentState.repImage);
-		$('#repName').html(currentState.repName);
-		$('#repMobile').html(currentState.repMobile);
-		$('#repEmail').html(currentState.repEmail).attr('href', 'mailto:' + currentState.repEmail);
-		// } Manager Info
-		
-		// { Open
-		$('#locationInfo').fadeIn();
-		// } Open
-		
-		// } Build Info
-		
-		// } Open this
-	
-	}
-	
-});
-// } State buttons
-
-// { Location buttons
-$('#locationNav').on({
-	
-	click:function() {
-		
-		var clicked = $(this);
-		// { Close others
-		$(this).siblings().removeClass('locationNavItemOpen');
-		// } Close others
-		
-		// { Open this
-		
-		// { Set current Location
-		per(locations, function(i, location) {
-			
-			location.popup.close();
-			
-			if(parseInt(clicked.attr('loc'), 10) === location.id) {
-				
-				currentLocation = location;
-				
-				// { Draw Map
-				location.popup.open(map, location.marker);
-				map.setZoom(12);
-				// } Draw Map
-				
-			}
-			
-		});
-		// } Set current Location
-		
-		// { Style
-		$(this).addClass('locationNavItemOpen');
-		// } Style
-		
-		// } Open this
-	
-	}
-	
-}, '.locationNavItem');
-// } Location buttons
-
-// } Handlers
 // ================
 
 // ================
@@ -278,4 +144,138 @@ function drawMapState(xState) {
 }
 
 // } Functions
+// ================
+
+// ================
+// { Handlers
+
+// { State buttons
+$('.stateNavItem').on({
+	
+	click:function() {
+		
+		// { Close others
+		$(this).siblings().removeClass('stateNavItemOpen');
+		$('#locationInitial').fadeOut();
+		// } Close others
+		
+		// { Open this
+		
+		// { Set current State
+		currentState = states[$(this).attr('state')];
+		// } Set current State
+		
+		// { Style
+		$(this).addClass('stateNavItemOpen');
+		// } Style
+		
+		// { Build Location list
+		$('#locationNav').animate({
+			
+			width:'0'
+			
+		}, 100, function() {
+			
+			// { Reset
+			$('#locationNav').html('');
+			// } Reset
+			
+			// { Per Location (build Location list)
+			per(locations, function(i, location) {
+				
+				location.popup.close();
+				
+				// { If State match (add to list)
+				if(location.state === currentState.short) {
+					
+					// { Draw
+					$('#locationNav').append('<li class="locationNavItem" id="location' + location.id + '" loc="' + location.id + '">' + location.suburb + '</li>');
+					// } Draw
+					
+				}
+				// } If State match  (add to list)
+				
+			});
+			// } Per Location (build Location list)
+			
+			// { Slide out locations
+			$('#locationNav').animate({
+				
+				width:'200px'
+				
+			}, 100);
+			// } Slide out locations
+			
+		});
+		// } Build Location list
+		
+		// { Build Map
+		drawMapState(currentState);
+		// } Build Map
+		
+		// { Build Info
+		
+		// { Manager Info
+		$('#repImage').attr('src', '../src/images/reps/' + currentState.repImage);
+		$('#repName').html(currentState.repName);
+		$('#repMobile').html(currentState.repMobile);
+		$('#repEmail').html(currentState.repEmail).attr('href', 'mailto:' + currentState.repEmail);
+		// } Manager Info
+		
+		// { Open
+		$('#locationInfo').fadeIn();
+		// } Open
+		
+		// } Build Info
+		
+		// } Open this
+	
+	}
+	
+});
+// } State buttons
+
+// { Location buttons
+$('#locationNav').on({
+	
+	click:function() {
+		
+		var clicked = $(this);
+		// { Close others
+		$(this).siblings().removeClass('locationNavItemOpen');
+		// } Close others
+		
+		// { Open this
+		
+		// { Set current Location
+		per(locations, function(i, location) {
+			
+			location.popup.close();
+			
+			if(parseInt(clicked.attr('loc'), 10) === location.id) {
+				
+				currentLocation = location;
+				
+				// { Draw Map
+				location.popup.open(map, location.marker);
+				map.setZoom(12);
+				// } Draw Map
+				
+			}
+			
+		});
+		// } Set current Location
+		
+		// { Style
+		$(this).addClass('locationNavItemOpen');
+		// } Style
+		
+		// } Open this
+	
+	}
+	
+}, '.locationNavItem');
+// } Location buttons
+
+// } Handlers
 // ================
