@@ -5,7 +5,7 @@
 
 // { jsHint rules
 /*jshint multistr:true */
-/*global per, Galleria */
+/*global per, Galleria, locations */
 // } jsHint rules
 
 // { Initialise
@@ -1223,7 +1223,7 @@ $('#mfcpicBuy').on({
 	
 	click:function() {
 		
-		// { Temp Notice
+		/* //Temp Notice
 		$('#modalHeader').html('Coming Soon!');
 		$('#modalContent').html(
 			'We\'re currently in the process of upgrading to a brand new ordering system. In the meantime please email or call us to place your order!' +
@@ -1232,9 +1232,9 @@ $('#mfcpicBuy').on({
 			'<p>(M) 0408 853 994</p>'
 		);
 		$('#modalBackground').fadeIn();
-		// } Temp Notice
+		*/ // Temp Notice
 		
-		/* // Live
+		// Live
         // { Build location options
         var locationOptions = "";
         var locOptsTemp = [];
@@ -1330,7 +1330,7 @@ $('#mfcpicBuy').on({
 		// { Show modal
 		$('#modalBackground').fadeIn();
 		// } Show modal
-		*/ // Live
+		// Live
 		
 	}
 	
