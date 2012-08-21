@@ -1285,15 +1285,15 @@ $('#mfcpicBuy').on({
 				
 					// { Silent data
 					'<input type="hidden" name="product" value="' + currentProduct.model + '" />' +
-					//'<input type="hidden" name="amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
-					'<input type="hidden" name="amount" value="101" />' +
+					'<input type="hidden" name="amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
+					//'<input type="hidden" name="amount" value="101" />' +
 					// } Silent data
 					
 					// { Customer data
 					
-					'<input id="postName" type="text" name="name" placeholder="Your name" value="Kye Weedon"/>' + // !DEV remove default value
-					'<input id="postPhone" type="tel" name="phone" placeholder="Contact number" value="0438453566"/>' + // !DEV remove default value
-					'<input id="postEmail" type="email" name="email" placeholder="Email address" value="mail@kyeweedon.com"/>' + // !DEV remove default value
+					'<input id="postName" type="text" name="name" placeholder="Your name"/>' +
+					'<input id="postPhone" type="tel" name="phone" placeholder="Contact number"/>' +
+					'<input id="postEmail" type="email" name="email" placeholder="Email address"/>' +
 					'<select id="postPickup" type="" name="pickup" value="">' +
 					
 						'<option value="none">Select a Suburb...</option>' +

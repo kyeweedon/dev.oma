@@ -822,6 +822,94 @@ var locations = [
 		lat:-16.924411,
 		lng:145.766516,
 		marker:{}
+	},
+	{
+		id:66,
+		name:'Devonport Boat \'n\' Tackle',
+		address:'13a Forbes Street',
+		suburb:'Devonport',
+		postcode:'7310',
+		state:'TAS',
+		lat:-41.182665,
+		lng:146.355628,
+		marker:{}
+	},
+	{
+		id:67,
+		name:'BT Performance',
+		address:'114 Curlewis Street',
+		suburb:'Swan Hill',
+		postcode:'3595',
+		state:'VIC',
+		lat:-35.337343,
+		lng:143.560326,
+		marker:{}
+	},
+	{
+		id:68,
+		name:'Snowy River Marine',
+		address:'3-11 Browning Street',
+		suburb:'Orbost',
+		postcode:'3888',
+		state:'VIC',
+		lat:-37.709878,
+		lng:148.455443,
+		marker:{}
+	},
+	{
+		id:69,
+		name:'Get Wet Marine',
+		address:'353 Kororoit Creek Road',
+		suburb:'Altona',
+		postcode:'3018',
+		state:'VIC',
+		lat:-37.851215,
+		lng:144.835057,
+		marker:{}
+	},
+	{
+		id:70,
+		name:'The Boatshed at Woronora',
+		address:'131 Prince Edward Park Road',
+		suburb:'Woronora',
+		postcode:'2232',
+		state:'NSW',
+		lat:-34.029727,
+		lng:151.040547,
+		marker:{}
+	},
+	{
+		id:71,
+		name:'Transtate Marine',
+		address:'2 Egan Court',
+		suburb:'Belconnen',
+		postcode:'2617',
+		state:'ACT',
+		lat:-35.241104,
+		lng:149.058618,
+		marker:{}
+	},
+	{
+		id:72,
+		name:'Dolphin Marine',
+		address:'3/11 Kelly Court',
+		suburb:'Buderim',
+		postcode:'4556',
+		state:'QLD',
+		lat:-26.669345,
+		lng:153.087618,
+		marker:{}
+	},
+	{
+		id:73,
+		name:'Seapower Marine Gold Coast',
+		address:'5/247 Bayview Street',
+		suburb:'Runaway Bay',
+		postcode:'4216',
+		state:'QLD',
+		lat:-27.901244,
+		lng:153.401536,
+		marker:{}
 	}
 	// } More
 	

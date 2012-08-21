@@ -18,7 +18,7 @@
 	$refID  = date(yzHis);
 	$merch  = 'TESTOUTMOTCOM01';
 	$order  = $_POST['product'] . '@' . $_POST['pickup'];
-	$return = 'http://dev.kye.io/oma/src/php/vpcReply.php' .
+	$return = 'http://outboardmotorsaustralia.com.au/src/php/vpcReply.php' .
 		'?name='    . $_POST['name']   . 
 		'&phone='   . $_POST['phone']  . 
 		'&email='   . $_POST['email']  .
