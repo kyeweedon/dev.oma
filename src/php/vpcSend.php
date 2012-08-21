@@ -1,5 +1,7 @@
 <?php
 
+	date_default_timezone_set('Australia/NSW');
+	
 	// { MD5 Hash
 	$hashKey = "002FD0D502FC0DC3FB348E43C74E72EE";
 	// } MD5 Hash
@@ -15,7 +17,7 @@
 	$amount = $_POST['amount'];
 	$commnd = 'pay';
 	$locale = 'en';
-	$refID  = date(yzHis);
+	$refID  = date('yzHis');
 	$merch  = 'TESTOUTMOTCOM01';
 	$order  = $_POST['product'] . '@' . $_POST['pickup'];
 	$return = 'http://dev.kye.io/oma/src/php/vpcReply.php' .
@@ -49,7 +51,7 @@
 	
 	// { Send
 	//echo $vpcURL;
-	header("Location: ".$vpcURL);
+	header("Location:".$vpcURL);
 	// } Send
 	
 ?>
