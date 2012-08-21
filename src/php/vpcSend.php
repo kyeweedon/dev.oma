@@ -17,7 +17,7 @@
 	$amount = $_POST['amount'];
 	$commnd = 'pay';
 	$locale = 'en';
-	$refID  = date(yzHis);
+	$refID  = date('yzHis');
 	$merch  = 'TESTOUTMOTCOM01';
 	$order  = $_POST['product'] . '@' . $_POST['pickup'];
 	$return = 'http://dev.kye.io/oma/src/php/vpcReply.php' .
