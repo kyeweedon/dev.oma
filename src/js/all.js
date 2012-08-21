@@ -189,7 +189,7 @@ var locations = [
 		id:9,
 		name:'Just Freight',
 		address:'25/27 Charlie Triggs Crescent',
-		suburb:'Thabebab',
+		suburb:'Thabeban',
 		postcode:'4670',
 		state:'QLD',
 		lat:-24.903471,
@@ -808,8 +808,22 @@ var locations = [
 		lat:-34.194777,
 		lng:142.174927,
 		marker:{}
-	}
+	},
 	// } VIC
+	
+	// { More
+	{
+		id:65,
+		name:'Mitchell Marine',
+		address:'303-305 Draper Street',
+		suburb:'Cairns',
+		postcode:'4870',
+		state:'QLD',
+		lat:-16.924411,
+		lng:145.766516,
+		marker:{}
+	}
+	// } More
 	
 ];
 
