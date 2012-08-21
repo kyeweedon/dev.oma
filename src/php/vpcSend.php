@@ -1,5 +1,5 @@
 <?php
-	
+
 	date_default_timezone_set('Australia/NSW');
 	
 	// { MD5 Hash
@@ -51,7 +51,7 @@
 	
 	// { Send
 	//echo $vpcURL;
-	header("Location: ".$vpcURL);
+	header("Location:".$vpcURL);
 	// } Send
 	
 ?>
