@@ -312,7 +312,7 @@
 	// { Post
 	
 	// { Success
-	if($txnResponseCode == 0) {
+	if($txnResponseCode == 0 && $txnResponseCode != 'E') {
 		
 		// { Email Sales
 		
