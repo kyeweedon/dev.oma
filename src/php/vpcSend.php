@@ -1,5 +1,7 @@
 <?php
-
+	
+	date_default_timezone_set('Australia/NSW');
+	
 	// { MD5 Hash
 	$hashKey = "002FD0D502FC0DC3FB348E43C74E72EE";
 	// } MD5 Hash
