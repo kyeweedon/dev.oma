@@ -1,7 +1,7 @@
 <?php
 	
-	error_reporting(E_ALL); //!DEV
-	ini_set('display_errors', '1'); //!DEV
+	//error_reporting(E_ALL); //!DEV
+	//ini_set('display_errors', '1'); //!DEV
 	
 	require('class.phpmailer.php');
 	require('class.smtp.php');
@@ -349,7 +349,7 @@
 		$mail = new PHPMailer();
 		
 		$mail->IsSMTP();
-		$mail->SMTPDebug = 1; //!DEV
+		//$mail->SMTPDebug = 1; //!DEV
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
@@ -363,7 +363,7 @@
 		$mail->SetFrom('noreply@outboardmotorsaustralia.com.au', 'Outboard Motors Australia');
 		$mail->AddAddress($_GET['email']);
 		
-		$mail->Subject = 'Purchase reciept';
+		$mail->Subject = 'Purchase reciept: ' . $receiptNo;
 		$mail->Body = 'Hi ' . $_GET['name'] . ',' .
 			"\r\n" .
 			'Thank you for your order! Please keep this email as a record of your purchase.' .
