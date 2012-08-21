@@ -1285,7 +1285,8 @@ $('#mfcpicBuy').on({
 				
 					// { Silent data
 					'<input type="hidden" name="product" value="' + currentProduct.model + '" />' +
-					'<input type="hidden" name="amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
+					//'<input type="hidden" name="amount" value="' + currentProduct.listPrice.slice(1).replace(',', '') + '00' + '" />' +
+					'<input type="hidden" name="amount" value="101" />' +
 					// } Silent data
 					
 					// { Customer data
