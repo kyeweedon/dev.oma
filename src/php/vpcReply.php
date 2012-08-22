@@ -331,7 +331,7 @@
 		// } Setup Mailer
 		
 		// { Mail
-		$mail->SetFrom('noreply@outboardmotorsaustralia.com.au', 'PURCHASE ORDER');
+		//$mail->SetFrom('noreply@outboardmotorsaustralia.com.au', 'PURCHASE ORDER');
 		$mail->AddAddress('sales@outboardmotorsaustralia.com.au');
 		$mail->AddAddress('kye@outboardmotorsaustralia.com.au');
 		
