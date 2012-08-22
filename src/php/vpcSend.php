@@ -3,7 +3,7 @@
 	date_default_timezone_set('Australia/NSW');
 	
 	// { MD5 Hash
-	$hashKey = "002FD0D502FC0DC3FB348E43C74E72EE";
+	$hashKey = "3CB6C2B1230073DF13FB0EFE3122E7A8";
 	// } MD5 Hash
 	
 	// { Payment URL
@@ -13,14 +13,14 @@
 	// { Data
 	$hashData = $hashKey;
 	
-	$access = 'A1706E8D';
+	$access = 'A50ECBA2';
 	$amount = $_POST['amount'];
 	$commnd = 'pay';
 	$locale = 'en';
 	$refID  = date('yzHis');
-	$merch  = 'TESTOUTMOTCOM01';
+	$merch  = 'OUTMOTCOM01';
 	$order  = $_POST['product'] . '@' . $_POST['pickup'];
-	$return = 'http://dev.kye.io/oma/src/php/vpcReply.php' .
+	$return = 'http://outboardmotorsaustralia.com.au/src/php/vpcReply.php' .
 		'?name='    . $_POST['name']   . 
 		'&phone='   . $_POST['phone']  . 
 		'&email='   . $_POST['email']  .

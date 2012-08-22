@@ -144,7 +144,7 @@
 	// } Functions
 	// ===============
 
-	$hashKey = "002FD0D502FC0DC3FB348E43C74E72EE";
+	$hashKey = "3CB6C2B1230073DF13FB0EFE3122E7A8";
 	
 	// If there has been a merchant secret set then sort and loop through all the
 	// data in the Virtual Payment Client response. While we have the data, we can
@@ -320,7 +320,7 @@
 		$mail = new PHPMailer();
 		
 		$mail->IsSMTP();
-		$mail->SMTPDebug = 1; //!DEV
+		//$mail->SMTPDebug = 1; //!DEV
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
