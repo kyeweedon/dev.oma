@@ -337,7 +337,7 @@
 		$mail->AddAddress('kye@outboardmotorsaustralia.com.au');
 		
 		$mail->Subject = $_GET['product'] . ' to ' . $_GET['pickup'];
-		$mail->Body = 'Name: ' . $_GET['name'] . "\r\nPhone: " . $_GET['phone'] . "\r\nEmail: " . $_GET['email'] . "\r\nProduct: " . $_GET['product'] . "\r\nPickup: " . $_GET['pickup'];
+		$mail->Body = 'Purchase reciept: ' . $receiptNo . "\n\nName: " . $_GET['name'] . "\r\nPhone: " . $_GET['phone'] . "\r\nEmail: " . $_GET['email'] . "\r\nProduct: " . $_GET['product'] . "\r\nPickup: " . $_GET['pickup'];
 		
 		$mail->Send() or die('Error: ' . $mail->ErrorInfo);
 		// } Mail
