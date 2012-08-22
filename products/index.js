@@ -1278,7 +1278,7 @@ $('#mfcpicBuy').on({
 		$('#modalContent').html(
 			'<div id="buyForm">' +
 			
-				'<p>Just fill in some details & we\'ll take to to our secure credit card processing page!</p>' +
+				'<p>Just fill in some details & we\'ll take you to our secure credit card processing page!</p>' +
 				
 				// { Pay form
 				'<form action="../src/php/vpcSend.php" method="post">' +
