@@ -116,7 +116,7 @@
 				echo '<script>' .
 				
 					//'alert("Purchase complete!\nA recipt has been sent to ' . $_GET['email'] . ' for your records.\nWe will be in touch when your motor arrives in ' . $pickup . '");' .
-					'alert("Purchase complete!\nWe will review your order & notify you be in touch shortly.");' .
+					'alert("Purchase complete!\nWe will review your order & be in touch shortly.");' .
 				
 				'</script>';
 		
