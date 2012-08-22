@@ -325,8 +325,8 @@
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
-		$mail->Host = 'ssl://smtp.googlemail.com';
-		$mail->Port = 465;
+		$mail->Host = 'smtp.gmail.com';
+		$mail->Port = 587;
 		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
 		$mail->Password = 'omaauto12';
 		// } Setup Mailer
@@ -354,9 +354,9 @@
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
-		//$mail->Host = 'smtp.gmail.com';
-		$mail->Host = 'ssl://smtp.googlemail.com';
-		$mail->Port = 465;
+		$mail->Host = 'smtp.gmail.com';
+		//$mail->Host = 'ssl://smtp.googlemail.com';
+		$mail->Port = 587;
 		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
 		$mail->Password = 'omaauto12';
 		// } Setup Mailer
