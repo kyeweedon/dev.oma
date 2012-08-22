@@ -5,7 +5,8 @@
 	
 	require('class.phpmailer.php');
 	require('class.smtp.php');
-		
+	//ini_set("include_path", ".:/path/to/phpmailer/dir");
+	
 	// ===============
 	// { Functions
 	
@@ -331,7 +332,7 @@
 		// } Setup Mailer
 		
 		// { Mail
-		//$mail->SetFrom('noreply@outboardmotorsaustralia.com.au', 'PURCHASE ORDER');
+		$mail->SetFrom('noreply@outboardmotorsaustralia.com.au', 'PURCHASE ORDER');
 		$mail->AddAddress('sales@outboardmotorsaustralia.com.au');
 		$mail->AddAddress('kye@outboardmotorsaustralia.com.au');
 		
