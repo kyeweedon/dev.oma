@@ -321,7 +321,7 @@
 		$mail = new PHPMailer();
 		
 		$mail->IsSMTP();
-		//$mail->SMTPDebug = 1; //!DEV
+		$mail->SMTPDebug = 1; //!DEV
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
@@ -350,7 +350,7 @@
 		$mail = new PHPMailer();
 		
 		$mail->IsSMTP();
-		//$mail->SMTPDebug = 1; //!DEV
+		$mail->SMTPDebug = 1; //!DEV
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
