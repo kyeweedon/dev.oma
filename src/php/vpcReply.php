@@ -315,6 +315,7 @@
 	// { Success
 	if($txnResponseCode == 0 && $txnResponseCode != 'E') {
 		
+		/*
 		// { Email Sales
 		
 		// { Setup Mailer
@@ -326,7 +327,7 @@
 		$mail->SMTPSecure = 'ssl';
 		
 		$mail->Host = 'smtp.gmail.com';
-		$mail->Port = 587;
+		$mail->Port = 465;
 		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
 		$mail->Password = 'omaauto12';
 		// } Setup Mailer
@@ -356,7 +357,7 @@
 		
 		$mail->Host = 'smtp.gmail.com';
 		//$mail->Host = 'ssl://smtp.googlemail.com';
-		$mail->Port = 587;
+		$mail->Port = 465;
 		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
 		$mail->Password = 'omaauto12';
 		// } Setup Mailer
@@ -385,6 +386,7 @@
 		// } Mail
 		
 		// } Email Customer
+		*/
 		
 		header('location:../../service/index.php?code=' . $txnResponseCode . '&note=' . $message . '&email=' . $_GET['email'] . '&pickup=' . $_GET['pickup']);
 		
