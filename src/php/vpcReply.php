@@ -325,7 +325,7 @@
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
-		$mail->Host = 'smtp.gmail.com';
+		$mail->Host = 'ssl://smtp.googlemail.com';
 		$mail->Port = 465;
 		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
 		$mail->Password = 'omaauto12';
@@ -354,7 +354,8 @@
 		$mail->SMTPAuth = true;
 		$mail->SMTPSecure = 'ssl';
 		
-		$mail->Host = 'smtp.gmail.com';
+		//$mail->Host = 'smtp.gmail.com';
+		$mail->Host = 'ssl://smtp.googlemail.com';
 		$mail->Port = 465;
 		$mail->Username = 'noreply@outboardmotorsaustralia.com.au';
 		$mail->Password = 'omaauto12';
