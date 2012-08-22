@@ -315,7 +315,6 @@
 	// { Success
 	if($txnResponseCode == 0 && $txnResponseCode != 'E') {
 		
-		/*
 		// { Email Sales
 		
 		// { Setup Mailer
@@ -386,7 +385,6 @@
 		// } Mail
 		
 		// } Email Customer
-		*/
 		
 		header('location:../../service/index.php?code=' . $txnResponseCode . '&note=' . $message . '&email=' . $_GET['email'] . '&pickup=' . $_GET['pickup']);
 		
