@@ -34,6 +34,13 @@
 			
 		</aside>
 		
+		<!-- Social Bar -->
+		<header id="socialBar">
+		
+		
+		
+		</header>
+		
 		<!-- Page Scaffold -->
 		<div class="page1">
 		
@@ -41,7 +48,7 @@
 			<div class="mainFrame">
 				
 				<!-- Main Title -->
-				<a id="mfTitle" href="">Outboard Motors Australia</a>
+				<img id="mfTitle" src="src/images/logoLarge.jpg" alt="Outboard Motors Australia"/>
 				
 				<!-- Main Header -->
 				<div id="mfHeader">
