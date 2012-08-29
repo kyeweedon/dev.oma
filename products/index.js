@@ -5,7 +5,7 @@
 
 // { jsHint rules
 /*jshint multistr:true */
-/*global per, Galleria, locations */
+/*global per, Galleria, locations, _ */
 // } jsHint rules
 
 // { Initialise
@@ -776,7 +776,7 @@ for(var i in products) { if(products.hasOwnProperty(i)) {
 	var product = products[i];
 	
 	// { If Novel Power Category
-	if(powerList.indexOf(product.powerCategory) === -1) {
+	if(_.indexOf(powerList, product.powerCategory) === -1) {
 		
 		// Add Power Category to list
 		powerList.push(product.powerCategory);
@@ -816,7 +816,8 @@ powerList.sort(function(a, b) {
 $(document).ready(function() {
 	
 	// { Per Prower Category (inject into nav)
-	powerList.forEach(function(power) {
+	//powerList.forEach(function(power) {
+	_.each(powerList, function(power) {
 		
 		$('#mfcPowerNav').prepend('<li class="pnPower" power="' + power + '">' + power + ' HP</li>');
 		

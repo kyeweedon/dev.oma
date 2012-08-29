@@ -1,19 +1,60 @@
 <!DOCTYPE html>
 
-<!--
-
-	// Kye Weedon
-	// kyeweedon.com
-	// June 2012
-
--->
-
 <html>
 
 	<head>
 		
 		<!-- Info -->
-		<title>Outboard Motors Australia</title>
+		<title>Outboard Motors Range - models & prices</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="description" content="We sell the following Outboard Motors. Our prices are cheap, & ordering is easy. Buy now!"/>
+		<meta name="keywords" content="Outboard Motors Australia buy online"/>
+		
+		<!-- Optiions -->
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+		<![endif]-->
+		<script type="text/javascript"> 
+			
+			var $buoop = {
+				
+				vs:{
+					
+					i:8,
+					f:11,
+					o:10.6,
+					s:4,
+					n:9
+					
+				}
+				
+			} 
+			$buoop.ol = window.onload; 
+			window.onload = function(){ 
+			
+				try {
+					
+					if ($buoop.ol) {
+						
+						$buoop.ol();
+						
+					}
+					
+				}
+				catch (e) {
+					
+					// Do nothing
+					
+				}
+				var e = document.createElement("script");
+				e.setAttribute("type", "text/javascript");
+				e.setAttribute("src", "../src/js/BrowserUpdate.js");
+				document.body.appendChild(e);
+				
+			}
+			
+		</script>
 		
 		<!-- Styles -->
 		<link rel="stylesheet" type="text/css" href="index.css"/>
@@ -62,7 +103,7 @@
 				<div id="mfHeader">
 				
 					<!-- Logo -->
-					<img id="mfhLogo" src="../src/images/logo.jpg"/>
+					<img id="mfhLogo" src="../src/images/logo.jpg" alt="Titan Outboard Motors"/>
 					
 					<!-- Nav Bar -->
 					<nav id="mfhNav">
@@ -230,21 +271,21 @@
 						
 							<div id="productGallery">
 							
-								<img src="../src/images/products/gallery/1.jpg"/>
-								<img src="../src/images/products/gallery/2.jpg"/>
-								<img src="../src/images/products/gallery/3.jpg"/>
-								<img src="../src/images/products/gallery/4.jpg"/>
-								<img src="../src/images/products/gallery/5.jpg"/>
-								<img src="../src/images/products/gallery/6.jpg"/>
-								<img src="../src/images/products/gallery/7.jpg"/>
-								<img src="../src/images/products/gallery/8.jpg"/>
-								<img src="../src/images/products/gallery/9.jpg"/>
-								<img src="../src/images/products/gallery/10.jpg"/>
-								<img src="../src/images/products/gallery/11.jpg"/>
-								<img src="../src/images/products/gallery/12.jpg"/>
-								<img src="../src/images/products/gallery/13.jpg"/>
-								<img src="../src/images/products/gallery/14.jpg"/>
-								<img src="../src/images/products/gallery/15.jpg"/>
+								<img src="../src/images/products/gallery/1.jpg" alt="Picture 1"/>
+								<img src="../src/images/products/gallery/2.jpg" alt="Picture 2"/>
+								<img src="../src/images/products/gallery/3.jpg" alt="Picture 3"/>
+								<img src="../src/images/products/gallery/4.jpg" alt="Picture 4"/>
+								<img src="../src/images/products/gallery/5.jpg" alt="Picture 5"/>
+								<img src="../src/images/products/gallery/6.jpg" alt="Picture 6"/>
+								<img src="../src/images/products/gallery/7.jpg" alt="Picture 7"/>
+								<img src="../src/images/products/gallery/8.jpg" alt="Picture 8"/>
+								<img src="../src/images/products/gallery/9.jpg" alt="Picture 9"/>
+								<img src="../src/images/products/gallery/10.jpg" alt="Picture 10"/>
+								<img src="../src/images/products/gallery/11.jpg" alt="Picture 11"/>
+								<img src="../src/images/products/gallery/12.jpg" alt="Picture 12"/>
+								<img src="../src/images/products/gallery/13.jpg" alt="Picture 13"/>
+								<img src="../src/images/products/gallery/14.jpg" alt="Picture 14"/>
+								<img src="../src/images/products/gallery/15.jpg" alt="Picture 15"/>
 							
 							</div>
 						
@@ -321,9 +362,10 @@
 		<aside id="preloader"></aside>
 		
 		<!-- Scripts -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/galleria/1.2.7/galleria.min.js"></script>
-		<script src="../src/js/all.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/galleria/1.2.7/galleria.min.js"></script>
+		<script src="../src/js/all.js"></script>
 		<script src="index.js"></script>
 		
 	</body>

@@ -5,7 +5,56 @@
 	<head>
 		
 		<!-- Info -->
-		<title>Outboard Motors Australia</title>
+		<title>Customer service & support</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta name="description" content="Outboard Motors Australia takes customer service & customer support seriously. We aim to have our customers satisfied & happy"/>
+		<meta name="keywords" content="Outboard Motors Australia buy online"/>
+		
+		<!-- Optiions -->
+		<!--[if lt IE 9]>
+			<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+		<![endif]-->
+		<script type="text/javascript"> 
+			
+			var $buoop = {
+				
+				vs:{
+					
+					i:8,
+					f:11,
+					o:10.6,
+					s:4,
+					n:9
+					
+				}
+				
+			} 
+			$buoop.ol = window.onload; 
+			window.onload = function(){ 
+			
+				try {
+					
+					if ($buoop.ol) {
+						
+						$buoop.ol();
+						
+					}
+					
+				}
+				catch (e) {
+					
+					// Do nothing
+					
+				}
+				var e = document.createElement("script");
+				e.setAttribute("type", "text/javascript");
+				e.setAttribute("src", "../src/js/BrowserUpdate.js");
+				document.body.appendChild(e);
+				
+			}
+			
+		</script>
 		
 		<!-- Styles -->
 		<link rel="stylesheet" type="text/css" href="index.css"/>
@@ -53,7 +102,7 @@
 				<div id="mfHeader">
 				
 					<!-- Logo -->
-					<img id="mfhLogo" src="../src/images/logo.jpg"/>
+					<img id="mfhLogo" src="../src/images/logo.jpg" alt="Titan Outboard Motors"/>
 					
 					<!-- Nav Bar -->
 					<nav id="mfhNav">
@@ -109,9 +158,10 @@
 		<aside id="preloader"></aside>
 		
 		<!-- Scripts -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"></script>
-		<script src="../src/js/all.min.js"></script>
-		<script src="index.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery-1.8.0.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
+		<script src="../src/js/all.js"></script>
+		<script src="index.js"></script>
 		
 		<?php
 		
