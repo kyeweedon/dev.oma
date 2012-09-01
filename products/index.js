@@ -676,7 +676,8 @@ function populatePower(xProducts) {
 	per(xProducts, function(i, product) {
 		
 		// { If novel Variant (add to Variant list)
-		if(optVariants.indexOf(product.variant) === -1) {
+		if(_.indexOf(optVariants, product.variant) === -1) {
+		//if(optVariants.indexOf(product.variant) === -1) {
 			
 			// { Push
 			optVariants.push(product.variant);
@@ -1047,7 +1048,8 @@ $('#variantPicker').on({
 			// { If this Variant (add transom)
 			if(
 				product.variant === currentVariant &&
-				tmpTransomList.indexOf(product.typeTransom) === -1
+				_.indexOf(tmpTransomList, product.typeTransom) === -1
+				//tmpTransomList.indexOf(product.typeTransom) === -1
 			) {
 				
 				// { Push
@@ -1089,7 +1091,8 @@ $('#transomPicker').on({
 			if(
 				product.variant === currentVariant &&
 				product.typeTransom === currentTransom &&
-				tmpSteeringList.indexOf(product.typeSteering) === -1
+				_.indexOf(tmpSteeringList, product.typeSteering) === -1
+				//tmpSteeringList.indexOf(product.typeSteering) === -1
 			) {
 				
 				// { Push
@@ -1132,7 +1135,8 @@ $('#steeringPicker').on({
 				product.variant === currentVariant &&
 				product.typeTransom === currentTransom &&
 				product.typeSteering === currentSteering &&
-				tmpStarterList.indexOf(product.typeStart) === -1
+				_.indexOf(tmpStarterList, product.typeStart) === -1
+				//tmpStarterList.indexOf(product.typeStart) === -1
 			) {
 				
 				// { Push
@@ -1176,7 +1180,8 @@ $('#starterPicker').on({
 				product.typeTransom === currentTransom &&
 				product.typeSteering === currentSteering &&
 				product.typeStart === currentStarter &&
-				tmpTrimList.indexOf(product.typeTrim) === -1
+				_.indexOf(tmpTrimList, product.typeTrim) === -1
+				//tmpTrimList.indexOf(product.typeTrim) === -1
 			) {
 				
 				// { Push
