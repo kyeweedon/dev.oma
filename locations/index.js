@@ -216,10 +216,10 @@ $('.stateNavItem').on({
 		// { Build Info
 		
 		// { Manager Info
-		$('#repImage').attr('src', '../src/images/reps/' + currentState.repImage);
-		$('#repName').html(currentState.repName);
-		$('#repMobile').html(currentState.repMobile);
-		$('#repEmail').html(currentState.repEmail).attr('href', 'mailto:' + currentState.repEmail);
+		//$('#repImage').attr('src', '../src/images/reps/' + currentState.repImage);
+		//$('#repName').html(currentState.repName);
+		//$('#repMobile').html(currentState.repMobile);
+		//$('#repEmail').html(currentState.repEmail).attr('href', 'mailto:' + currentState.repEmail);
 		// } Manager Info
 		
 		// { Open
