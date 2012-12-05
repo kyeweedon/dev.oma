@@ -1319,10 +1319,10 @@ $('#mfcpicBuy').on({
 				// { Multiples
 				'<div>' +
 				
-					'<p>If you\'d like to purchase multiple motors, please contact <strong>Peter Osborn</strong> for pricing' +
+					'<p>If you\'d like to purchase multiple motors, please contact <strong>Paul Charlton</strong> for pricing' +
 					
-						'<a href="mailto:peter@outboardmotorsaustralia.com.au">peter@outboardmotorsaustralia.com.au</a>' +
-						'<p>(M) 0408 853 994</p>' +
+						'<a href="mailto:paul@outboardmotorsaustralia.com.au">paul@outboardmotorsaustralia.com.au</a>' +
+						'<p>(M) 0457 445 396</p>' +
 					
 					'</p>' +
 				
